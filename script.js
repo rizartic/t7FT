@@ -1,3 +1,8 @@
+function trySearch() {
+    var name = document.getElementById("charName").value;
+    document.getElementById("demo").innerHTML = name;
+}
+
 const app = document.getElementById('root');
 console.log(app);
 
@@ -9,6 +14,7 @@ container.setAttribute('class', 'container');
 
 app.appendChild(logo);
 app.appendChild(container);
+
 
 var request = new XMLHttpRequest()
 //hey this is a test

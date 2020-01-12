@@ -3,12 +3,33 @@
     <head>
         <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <title> TEKKEN 7 </title>
     </head>
     <body> 
         <div id='root'></div>
         <h1>TEKKEN 7</h1>
         <p> The best fights are personal.</p>
+        <input type="text" id="charName" value="Character Select">
+        <button onclick="trySearch()">Search</button>
+
+        <p id="demo"></p>
+  
+        <!-- <div class = "dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Character Select
+            <span class = "caret"></span></button>
+            <ul class = "dropdown-menu">
+                <li>Jin</li>
+                <li>Kazuya</li> 
+                <li>Leroy</li>
+
+            </ul>
+        </div> -->
+        
         <script src="script.js"></script>
     </body>
 </html>
