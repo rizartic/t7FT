@@ -11,7 +11,7 @@ app.appendChild(logo);
 app.appendChild(container);
 
 var request = new XMLHttpRequest()
-
+var test = 0;
 request.open('GET', 'https://cors-anywhere.herokuapp.com/http://t7api.herokuapp.com/character/list', true)
 
 request.onload = function() {
