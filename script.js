@@ -1,5 +1,28 @@
+var dict = {
+    "jin" : "jin",
+    "kaz" : "kazuya",
+    "kazuya" : "kazuya",
+
+}
+var input = document.getElementById("charName");
+input.addEventListener("keyup", 
+function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+
+        document.getElementById("searchBtn").click();
+    }
+});
+
 function trySearch() {
     var name = document.getElementById("charName").value;
+    if(dict[name]) {
+       alert("We're in");
+    }
+    else {
+        alert("No good");
+    }
+
     document.getElementById("demo").innerHTML = name;
 }
 
@@ -20,6 +43,12 @@ var request = new XMLHttpRequest()
 //hey this is a test
 request.open('GET', 'https://cors-anywhere.herokuapp.com/http://t7api.herokuapp.com/character/list', true)
 
+
+
+//Send Request
+request.send()
+
+/*
 request.onload = function() {
     //Begin accessing JSON data here
     var data = JSON.parse(this.response)
@@ -35,6 +64,4 @@ request.onload = function() {
         card.appendChild(h1);
     });
 }
-
-//Send Request
-request.send()
+*/
