@@ -41,27 +41,32 @@ app.appendChild(container);
 
 var request = new XMLHttpRequest()
 //hey this is a test
-request.open('GET', 'https://cors-anywhere.herokuapp.com/http://t7api.herokuapp.com/character/list', true)
-
+request.open('GET', 'https://cors-anywhere.herokuapp.com/http://t7api.herokuapp.com/character/josie?cmd=df2', true)
 
 
 //Send Request
 request.send()
 
-/*
+
+// **for testing individual console gets
 request.onload = function() {
-    //Begin accessing JSON data here
     var data = JSON.parse(this.response)
-
-    data.forEach(character => {
-        const card = document.createElement('div');
-        card.setAttribute('class', 'card');
-
-        const h1 = document.createElement('h1');
-        h1.textContent = ' '+character.label;
-
-        container.appendChild(card);
-        card.appendChild(h1);
-    });
+    console.log(JSON.stringify(data))
 }
-*/
+
+// // 
+// request.onload = function() {
+//     //Begin accessing JSON data here
+//     var data = JSON.parse(this.response)
+
+//     data.forEach(character => {
+//         const card = document.createElement('div');
+//         card.setAttribute('class', 'card');
+
+//         const h1 = document.createElement('h1');
+//         h1.textContent = ' '+character.label;
+
+//         container.appendChild(card);
+//         card.appendChild(h1);
+//     });
+// }
