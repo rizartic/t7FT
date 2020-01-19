@@ -1,34 +1,45 @@
-const app = document.getElementById('root');
-console.log(app);
+// Event listener when clicking on character card.
+document.getElementById('button').addEventListener("click", function(){
+    document.querySelector('.character-info-window-overlay').style.display = 'flex';
+});
 
-const logo = document.createElement('img');
-logo.src = 'logo.png';
+//Event listener when closing the character modal.
+document.querySelector('.close').addEventListener('click', function(){
+    document.querySelector('.character-info-window-overlay').style.display='none';
+});
 
-const container = document.createElement('div');
-container.setAttribute('class', 'container');
+// const app = document.getElementById('root');
+// console.log(app);
 
-app.appendChild(logo);
-app.appendChild(container);
+// const container = document.createElement('div');
+// container.setAttribute('class', 'container');
 
-var request = new XMLHttpRequest()
+// app.appendChild(container);
 
-request.open('GET', 'https://cors-anywhere.herokuapp.com/http://t7api.herokuapp.com/character/list', true)
+/*THIS CODE MAKES THE REQUEST*/
+// var request = new XMLHttpRequest()
+// var proxy = 'https://cors-anywhere.herokuapp.com/'
 
-request.onload = function() {
-    //Begin accessing JSON data here
-    var data = JSON.parse(this.response)
+// request.open('GET', proxy+'http://t7api.herokuapp.com/character/list', true)
 
-    data.forEach(character => {
-        const card = document.createElement('div');
-        card.setAttribute('class', 'card');
+// request.onload = function() {
+//     //Begin accessing JSON data here
+//     var data = JSON.parse(this.response)
 
-        const h1 = document.createElement('h1');
-        h1.textContent = ' '+character.label;
+//     data.forEach(character => {
+        
+//         const card = document.createElement('div');
+//         card.setAttribute('class', 'card');
 
-        container.appendChild(card);
-        card.appendChild(h1);
-    });
-}
+//         const h1 = document.createElement('h1');
+//         h1.textContent = ' '+character.label;
 
-//Send Request
-request.send()
+//         container.appendChild(card);
+//         card.appendChild(h1);
+
+        
+//     });
+// }
+
+// //Send Request
+// request.send()
