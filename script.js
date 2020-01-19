@@ -50,8 +50,21 @@ request.send()
 
 // **for testing individual console gets
 request.onload = function() {
-    var data = JSON.parse(this.response)
-    console.log(JSON.stringify(data))
+    //** note in JS, vars can be arrays.
+    // In this example, fuzzy searching a command will
+    // will return an array of all strings containing that command*/
+    
+    
+    var data = JSON.parse(this.response) //think its necessary for using data? convert json to object / array of objects
+    // console.log(JSON.stringify(data))
+    // console.log(data.length) //return length of array
+    // console.log(data[0].speed) //return the speed of the first move in array
+    
+    // data.forEach(function(element) { //return all strings the search found
+    //     console.log(element.cmd)
+
+    // })
+    // console.log(data)
 }
 
 // // 
