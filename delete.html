@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            background-color: lightgrey;
+            width: 500px;
+            border: 15px solid orange;
+            padding: 50px;
+            margin: 20px;
+            align: left;
+        }
+
+        label {
+            width: 240px;
+            display: inline-block;
+        }
+
+        table,
+        th,
+        td {
+
+            border: 1px solid black;
+            padding: 2px;
+            text-align: center;
+        }
+
+        tr {
+            text-align: right;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function loan_calc() {
+            var check;
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            });
+
+
+            //var amount = parseFloat(document.getElementById('cost').value);
+            var amount = document.getElementById('cost').value;
+            if (isNaN(amount)) {
+                alert('Error, please enter only numbers in fields.');
+                return;
+            }
+            amount = parseFloat(amount);
+            if (amount > 500000 || amount <= 0) {
+                alert('Error. The loan amount does not appear to be a valid number. Please try again.');
+                return;
+            }
+
+            var down = document.getElementById('down').value;
+            if (isNaN(down)) {
+                alert('Error, please enter only numbers in fields.');
+                return;
+            }
+            down = parseFloat(down);
+
+            if (down >= amount) {
+                alert('You paid off the car already!');
+                return;
+            }
+
+            var mrate = document.getElementById('arate').value;
+            if (isNaN(mrate)) {
+                alert('Error, please enter only numbers in fields.');
+                return;
+            }
+            mrate = parseFloat(mrate);
+
+            if (mrate < 0 || mrate > 15) {
+                alert('Error. Invalid interest-rate, or you are getting ripped off. Please try again.');
+                return;
+            }
+            mrate = mrate / 1200; //making it a proper percent here
+
+
+            var term = document.getElementById('term').value;
+            if (isNaN(term)) {
+                alert('Error, please enter only numbers in fields.');
+                return;
+            }
+            term = parseFloat(term) * 12;
+            if (term < 12 || term > 72) {
+                alert('Error. Invalid term limit. Please try again.');
+                return;
+            }
+
+            //payment = amount * (irate * (1 + irate) ^ term) / ((1 + irate) ^ term - 1.0)
+            if (mrate == 0) {
+                var monthly = (amount - down) / term;
+
+            }
+            else {
+                var monthly = (amount - down) * ((mrate * Math.pow(1 + mrate, term)) / (Math.pow(1 + mrate, term) - 1.0));
+            }
+
+
+            document.getElementById('mon_result').value = formatter.format(monthly);
+            document.getElementById('tot_result').value = formatter.format(monthly * term);
+
+            var table = document.getElementById('schedule');
+            //(document.getElementById('schedule').rows.length)
+			/*if ((document.getElementById('schedule').rows.length) != 1) {
+				while ((document.getElementById('schedule').rows.length) > 1) {
+						(document.getElementById('schedule').deleteRow(1);
+					}
+			}*/
+
+            var tableSize = document.getElementById('schedule').rows.length;
+
+            if (tableSize != 1) {
+                reset_table();
+            }
+            var tab_balance = amount - down;
+            var tab_interest;
+            var tab_princ;
+            for (var i = 1; i < term + 1; i++) {
+                var row = table.insertRow(document.getElementById('schedule').rows.length);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+
+
+                tab_interest = tab_balance * mrate;
+                tab_princ = monthly - tab_interest;
+                tab_balance -= tab_princ;
+
+                cell1.innerHTML = i;
+                cell2.innerHTML = formatter.format(tab_interest);
+                cell3.innerHTML = formatter.format(tab_princ);
+                if (tab_balance <= 0)
+                    cell4.innerHTML = '$0.00'
+                else
+                    cell4.innerHTML = formatter.format(tab_balance);
+
+            }
+        }
+
+        function loan_reset() {
+
+            document.getElementById('cost').value = "";
+            document.getElementById('down').value = "";
+            document.getElementById('arate').value = "";
+            document.getElementById('term').value = "";
+            document.getElementById('mon_result').value = "";
+            document.getElementById('tot_result').value = "";
+
+
+            reset_table();
+        }
+
+        function reset_table() {
+
+            var tableSize = document.getElementById('schedule').rows.length;
+            for (var i = 0; i < tableSize - 1; i++) {
+                document.getElementById('schedule').deleteRow(1);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <center>
+        <h1> CS 326 Car Loan Calculator </h1>
+        <h1> Riz Walter Articulo </h1>
+        <hr />
+
+
+        <div align=left>
+
+            <form>
+                <fieldset>
+
+                    <label> Car Cost Amount </label>
+                    <input type "text" id="cost"> <br /> <br />
+
+                    <label> Down Payment </label>
+                    <input type "text" id="down" /> <br /> <br />
+
+                    <label> Annual Interest Rate </label>
+                    <input type "text" id="arate" /> <br /> <br />
+
+                    <label> Term (in years) (1-6) </label>
+                    <input type "text" id="term" /> <br /> <br />
+
+                    <!-- changed text to number -->
+                    <input type="button" value="Calculate" onclick="loan_calc()" />
+
+
+
+                    <input type="button" value="Reset Form" onclick="loan_reset()" />
+
+
+
+                    <br /><br />
+                    <label> Monthly Payment: </label>
+
+                    <input readonly text id="mon_result" />
+                    <br />
+
+                    <label> Total Payment: </label>
+                    <input readonly text id="tot_result" />
+                    <br />
+                </fieldset>
+
+            </form>
+            <br /><br /><br />
+            <label> <b> Payment Schedule: </b> </label>
+
+            <br /> <br />
+
+            <table id="schedule" />
+            <tr>
+                <th width="40">Car Payment Number</th>
+                <th width="200">Interest</th>
+                <th width="200">Principal</th>
+                <th width="200">Balance</thwidth>
+            </tr>
+            </table>
+
+
+
+
+
+
+        </div>
+
+    </center>
+
+</body>
+
+</html>

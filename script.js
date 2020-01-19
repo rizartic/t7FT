@@ -1,26 +1,26 @@
 var dict = {
-    "jin" : "jin",
-    "kaz" : "kazuya",
-    "kazuya" : "kazuya",
-    "josie" : "josie",
+    "jin": "jin",
+    "kaz": "kazuya",
+    "kazuya": "kazuya",
+    "josie": "josie",
 
 }
 var input = document.getElementById("charName");
-input.addEventListener("keyup", 
-function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
+input.addEventListener("keyup",
+    function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
 
-        document.getElementById("searchBtn").click();
-    }
-});
+            document.getElementById("searchBtn").click();
+        }
+    });
 
 function trySearch() {
     var chname = document.getElementById("charName").value;
     var strname = document.getElementById("moveName").value;
-    if(dict[chname]) {
-       alert("We're in");
-       performSearch(chname, strname);
+    if (dict[chname]) {
+        alert("We're in");
+        performSearch(chname, strname);
     }
     else {
         alert("No good");
@@ -51,26 +51,26 @@ function performSearch(chname, strname) {
 
 
     // **for testing individual console gets
-    request.onload = function() {
-            //** note in JS, vars can be arrays.
-            // In this example, fuzzy searching a command will
-            // will return an array of all strings containing that command*/
-            
-            
-            var data = JSON.parse(this.response) //think its necessary for using data? convert json to object / array of objects
-            console.log(data);
-            // console.log(JSON.stringify(data))
-            // console.log(data.length) //return length of array
-            // console.log(data[0].speed) //return the speed of the first move in array
-            
-            // data.forEach(function(element) { //return all strings the search found
-            //     console.log(element.cmd)
+    request.onload = function () {
+        //** note in JS, vars can be arrays.
+        // In this example, fuzzy searching a command will
+        // will return an array of all strings containing that command*/
 
-            // })
-            // console.log(data)
-        }
+
+        var data = JSON.parse(this.response) //think its necessary for using data? convert json to object / array of objects
+        console.log(data);
+        // console.log(JSON.stringify(data))
+        // console.log(data.length) //return length of array
+        // console.log(data[0].speed) //return the speed of the first move in array
+
+        // data.forEach(function(element) { //return all strings the search found
+        //     console.log(element.cmd)
+
+        // })
+        // console.log(data)
+    }
 }
-// // 
+// //
 // request.onload = function() {
 //     //Begin accessing JSON data here
 //     var data = JSON.parse(this.response)
