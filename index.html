@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-        <link href="style.css" rel="stylesheet">
-        <title> TEKKEN 7 </title>
-    </head>
-    <body> 
-        <div id='root'></div>
-        <h1>TEKKEN 7</h1>
-        <p> The best fights are personal.</p>
-        <script src="script.js"></script>
-    </body>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:700i&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <title> Tekken App </title>
+</head>
+
+<body>
+  <div id='tekken-app'></div>
+    <!-- Charater Card: Start -->
+    <div class="character-card">
+      <a href="#" id="button" class="button">
+        <img src = 'images/thumbnails/akuma-thumbnail.png' class="image">
+      <div class="character-card-name">AKUMA</div>
+      </a>
+    </div>
+    <!-- Character Card: End -->
+
+    <!-- Modal: Start -->
+    <div class="character-info-window-overlay">
+      <div class="character-info-window">
+        <img src = 'images/background/akuma-background.png' class="image-modal">
+        <div class="close">+</div>
+        <h1>AKUMA</h1>
+      </div>
+    </div>
+    <!-- Modal: End -->
+
+</div>
+<script src="script.js"></script>
+</body>
 </html>
