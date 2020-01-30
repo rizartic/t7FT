@@ -1,9 +1,16 @@
 var dict = {
+    "akuma" : "akuma",
+    "aku" : "akuma",
+    "gouki" : "akuma",
+    "alisa" : "alisa",
+    "anna" : "anna",
+    "ak" : "armorKing",
     "jin": "jin",
     "kaz": "kazuya",
     "kazuya": "kazuya",
     "josie": "josie",
-
+    "hei" : "heihachi",
+    "heihachi" : "heihachi",
 }
 var input = document.getElementById("charName");
 input.addEventListener("keyup",
@@ -40,13 +47,21 @@ container.setAttribute('class', 'container');
 app.appendChild(logo);
 app.appendChild(container);
 
-function performSearch(chname, strname) {
+
+//FUNCTION: Accesses the t7api and returns request results
+//PARAMETERS: string (character), string(move name), string/num(frame info of move)
+function performSearch(chname, strname, range) {
     return new Promise(resolve => {
         var data;
         var request = new XMLHttpRequest();
         var fetchUrl = 'https://cors-anywhere.herokuapp.com/http://t7api.herokuapp.com/character/' + dict[chname];
-        if (strname) { //if there was something included in the string field
+        //if there was something included in the string field
+        if (strname) { 
              fetchUrl = fetchUrl + '?cmd=' + strname;
+        }
+        //if there's something in range, we're looking for frame traps
+        else if (range != null) {
+            fetchUrl = fetchUrl + '?speed=' + range
         }
         request.open('GET', fetchUrl, true);
         // **for testing individual console gets
@@ -64,11 +79,9 @@ function performSearch(chname, strname) {
 }
 
 async function findFrameTrap(chname, strname) {
-    console.log('Now in findFrameTrap...');
-    var searchResult = await performSearch(chname, strname);
+    var searchResult = await performSearch(chname, strname, null);
 
     console.log(searchResult);
-    console.log('And we are back...');
     if (searchResult.length == 0) {
         console.log("No commands found here");
     }
@@ -78,6 +91,7 @@ async function findFrameTrap(chname, strname) {
         console.log('-------------------------');
         console.log('Command: ' + firstMove.cmd);
         console.log('OB: ' + firstMove.onBlock);
+        console.log(firstMove.onBlock);
         console.log('-------------------------');
 
         /* Here, the move is not plus enough to generate a frame trap,
@@ -95,11 +109,44 @@ async function findFrameTrap(chname, strname) {
         /* Let's first check for TRUE frame traps,
         meaning the second move is a mid. */
         else {
-            searchResult = await performSearch(chname, 0); //dont want a specific string; want the entire array here
+            var rangeLow = 5; //non-important low bracket
+            var rangeHigh = 9;
+            
+            if (isNaN(firstMove.onBlock)) {
+                firstMove.onBlock = convertSpeed(firstMove.onBlock);
+                rangeHigh += firstMove.onBlock[1]; //for simplicity, let's just use the best case scenario when finding frame traps
+            }
+            else {
+                rangeHigh += firstMove.onBlock;
+            }
+            var range = rangeLow + ',' + rangeHigh;
+            searchResult = await performSearch(chname, 0, range); //dont want a specific string; want the entire array here
+            console.log("Range is: " + range);
             console.log(searchResult);
         }
 
 
     }
 
+}
+
+//may choose to update later
+//PARAMETERS: string
+//OUTPUT: number
+//FUNCTION: Converts a range of numbers to just one
+function convertSpeed(passedSpeed) {
+    var speed = passedSpeed;
+    speed = speed.replace(/[^\d.-]/g,' ');
+    // speed = speed.replace(/[^0-9]/g, ' ');
+    // speed = speed.substr(1); //need to do this, dont know why string is producing a leading "9"
+    speed = speed.trim();
+    console.log("In convert speed")/////
+    console.log(speed);
+    speed = speed.split(" ");
+    speed = speed.filter(Boolean); //stack overflow, removing empty elements from an array
+    console.log(speed);
+    for (i = 0; i < speed.length; i++)
+        speed[i] = parseInt(speed[i]);
+    console.log(speed);
+    return speed;
 }
