@@ -114,15 +114,18 @@ async function findFrameTrap(chname, strname) {
             
             if (isNaN(firstMove.onBlock)) {
                 firstMove.onBlock = convertSpeed(firstMove.onBlock);
-                rangeHigh += firstMove.onBlock[1]; //for simplicity, let's just use the best case scenario when finding frame traps
+                rangeHigh += firstMove.onBlock[0]; //for simplicity, let's just the low end for the general case scenario when finding frame traps
             }
             else {
                 rangeHigh += firstMove.onBlock;
             }
             var range = rangeLow + ',' + rangeHigh;
             searchResult = await performSearch(chname, 0, range); //dont want a specific string; want the entire array here
-            console.log("Range is: " + range);
+            console.log("Number of all possible moves: " + searchResult.length);
             console.log(searchResult);
+            console.log("Range is: " + range);
+            
+            console.log(buildRcmdMoves(searchResult));
         }
 
 
@@ -130,6 +133,18 @@ async function findFrameTrap(chname, strname) {
 
 }
 
+//PARAMETERS: array of moves
+//OUTPUT: returns the "best" moves to use, what strings create good frame traps
+function buildRcmdMoves(arr) {
+    var rcmdArr = [];
+    console.log(typeof(arr));
+    arr.forEach(move => {
+        if (move.hit[0] == "m")
+            rcmdArr.push(move);
+    })
+    
+    return rcmdArr;
+}
 //may choose to update later
 //PARAMETERS: string
 //OUTPUT: number
