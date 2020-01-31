@@ -12,7 +12,7 @@ var dict = {
     "hei" : "heihachi",
     "heihachi" : "heihachi",
 }
-var input = document.getElementById("charName");
+var input = document.getElementById("moveName");
 input.addEventListener("keyup",
     function (event) {
         if (event.keyCode === 13) {
@@ -104,7 +104,7 @@ async function findFrameTrap(chname, strname) {
                 console.log('...but side stepping is possible. OB: (' + firstMove.onBlock + ')');
         }
 
-        /* Here, the move might make a frame trap, so we'll make
+        /* Here, the move will make a frame trap, so we'll make
         searches in the character's movelist. */
         /* Let's first check for TRUE frame traps,
         meaning the second move is a mid. */
@@ -124,8 +124,10 @@ async function findFrameTrap(chname, strname) {
             console.log("Number of all possible moves: " + searchResult.length);
             console.log(searchResult);
             console.log("Range is: " + range);
-            
-            console.log(buildRcmdMoves(searchResult));
+            console.log("Here's the mid, unavoidable moves: ");
+            console.log(buildRcmdMoves(searchResult, "m"));
+            console.log("Here's high frame trap moves: ");
+            console.log(buildRcmdMoves(searchResult, "h"));
         }
 
 
@@ -135,11 +137,11 @@ async function findFrameTrap(chname, strname) {
 
 //PARAMETERS: array of moves
 //OUTPUT: returns the "best" moves to use, what strings create good frame traps
-function buildRcmdMoves(arr) {
+function buildRcmdMoves(arr, hitHeight) {
     var rcmdArr = [];
     console.log(typeof(arr));
     arr.forEach(move => {
-        if (move.hit[0] == "m")
+        if (move.hit[0] == hitHeight)
             rcmdArr.push(move);
     })
     
