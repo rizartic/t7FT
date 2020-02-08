@@ -1,5 +1,6 @@
-var dict = {
+var dict = { //dictionaries
     "akuma" : "akuma",
+    "bryan" : "bryan",
     "aku" : "akuma",
     "gouki" : "akuma",
     "alisa" : "alisa",
@@ -11,6 +12,7 @@ var dict = {
     "josie": "josie",
     "hei" : "heihachi",
     "heihachi" : "heihachi",
+    "lee": "lee",
 }
 var input = document.getElementById("moveName");
 input.addEventListener("keyup",
@@ -78,6 +80,9 @@ function performSearch(chname, strname, range) {
     });
 }
 
+//when user presses enter,
+//this function triggers
+//Finds frame data onblock
 async function findFrameTrap(chname, strname) {
     var searchResult = await performSearch(chname, strname, null);
 
@@ -86,14 +91,20 @@ async function findFrameTrap(chname, strname) {
         console.log("No commands found here");
     }
     else { //here, we'll look for frame traps using the move given.
+        //currently, we're only working with OH.
         // console.log(data);
         var firstMove = searchResult[0];
+        if (isNaN(firstMove.onBlock)) {
+            firstMove.onBlock = convertSpeed(firstMove.onBlock);
+            firstMove.onBlock = firstMove.onBlock[0]; //just use the lowest possible value of OB
+        }
         console.log('-------------------------');
         console.log('Command: ' + firstMove.cmd);
         console.log('OB: ' + firstMove.onBlock);
         console.log(firstMove.onBlock);
         console.log('-------------------------');
 
+        //--------------------------------------------------------------------------------------- should be its own function, so we do OB and OH
         /* Here, the move is not plus enough to generate a frame trap,
         so we'll check if we can sidestep */
         if (firstMove.onBlock < 1 && firstMove.onBlock > -9) {
@@ -103,7 +114,7 @@ async function findFrameTrap(chname, strname) {
             else
                 console.log('...but side stepping is possible. OB: (' + firstMove.onBlock + ')');
         }
-
+        //---------------------------------------------------------------------------------------
         /* Here, the move will make a frame trap, so we'll make
         searches in the character's movelist. */
         /* Let's first check for TRUE frame traps,
@@ -111,23 +122,17 @@ async function findFrameTrap(chname, strname) {
         else {
             var rangeLow = 5; //non-important low bracket
             var rangeHigh = 9;
+            rangeHigh += firstMove.onBlock;
             
-            if (isNaN(firstMove.onBlock)) {
-                firstMove.onBlock = convertSpeed(firstMove.onBlock);
-                rangeHigh += firstMove.onBlock[0]; //for simplicity, let's just the low end for the general case scenario when finding frame traps
-            }
-            else {
-                rangeHigh += firstMove.onBlock;
-            }
             var range = rangeLow + ',' + rangeHigh;
-            searchResult = await performSearch(chname, 0, range); //dont want a specific string; want the entire array here
+            searchResultArr = await performSearch(chname, 0, range); //dont want a specific string; want an array of moves with startup within range
             console.log("Number of all possible moves: " + searchResult.length);
-            console.log(searchResult);
+            console.log(searchResultArr);
             console.log("Range is: " + range);
             console.log("Here's the mid, unavoidable moves: ");
-            console.log(buildRcmdMoves(searchResult, "m"));
+            console.log(buildRcmdMoves(searchResultArr, "m"));
             console.log("Here's high frame trap moves: ");
-            console.log(buildRcmdMoves(searchResult, "h"));
+            console.log(buildRcmdMoves(searchResultArr, "h"));
         }
 
 
@@ -139,7 +144,6 @@ async function findFrameTrap(chname, strname) {
 //OUTPUT: returns the "best" moves to use, what strings create good frame traps
 function buildRcmdMoves(arr, hitHeight) {
     var rcmdArr = [];
-    console.log(typeof(arr));
     arr.forEach(move => {
         if (move.hit[0] == hitHeight)
             rcmdArr.push(move);
@@ -147,6 +151,7 @@ function buildRcmdMoves(arr, hitHeight) {
     
     return rcmdArr;
 }
+
 //may choose to update later
 //PARAMETERS: string
 //OUTPUT: number
@@ -161,9 +166,9 @@ function convertSpeed(passedSpeed) {
     console.log(speed);
     speed = speed.split(" ");
     speed = speed.filter(Boolean); //stack overflow, removing empty elements from an array
-    console.log(speed);
+    console.log(speed);/////
     for (i = 0; i < speed.length; i++)
         speed[i] = parseInt(speed[i]);
-    console.log(speed);
+    console.log(speed);/////
     return speed;
 }
