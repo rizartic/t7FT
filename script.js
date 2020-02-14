@@ -43,11 +43,11 @@ console.log(app);
 const logo = document.createElement('img');
 logo.src = 'logo.png';
 
-const container = document.createElement('div');
-container.setAttribute('class', 'container');
+// const app = document.getElementById('root');
+// console.log(app);
 
-app.appendChild(logo);
-app.appendChild(container);
+// const container = document.createElement('div');
+// container.setAttribute('class', 'container');
 
 
 //FUNCTION: Accesses the t7api and returns request results
