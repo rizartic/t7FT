@@ -3,48 +3,159 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="joshcardStyle.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title> TEKKEN 7 </title>
 </head>
 
 <body>
-    <div id='root'></div>
-    <h1>TEKKEN 7</h1>
-    <p> The best fights are personal.</p>
-    <input type="text" id="charName" value="c"> </br>
-    <input type="text" id="moveName" value="m">
-    <button id="searchBtn" onclick="trySearch()">Search</button>
+    <div class="container">
+        <h1>TEKKEN 7</h1>
+        <p> The best fights are personal.</p>
+        <p> Quicksearch: </p>
 
-    <p id="demo"></p>
-
-    <div id='tekken-app'></div>
-    <!-- Charater Card: Start -->
-    <div class="character-card">
-        <a href="#" id="button" class="button">
-            <img src='images/thumbnails/akuma-thumbnail.png' class="image">
-            <div class="character-card-name">AKUMA</div>
-        </a>
-    </div>
-    <!-- Character Card: End -->
-
-    <!-- Modal: Start -->
-    <div class="character-info-window-overlay">
-        <div class="character-info-window">
-            <img src='images/background/akuma-background.png' class="image-modal">
-            <div class="close">+</div>
-            <h1>AKUMA</h1>
+        <div class="row">
+            <div class="col-xs-3">
+                <input id="charName" class="form-control" type="text" placeholder="Character" aria-label="Search">
+            </div>
+            <div class="col-xs-3">
+                <input id="moveName" class="form-control" type="text" placeholder="String" aria-label="Search">
+            </div>
+            <div class="col-xs-6">
+                <button id="searchBtn" onclick="trySearch()">Search</button>
+            </div>
         </div>
-    </div>
-    <!-- Modal: End -->
 
-    </div>
-    <script src="script.js"></script>
-    <script src="cardCreate.js"></script>
+       
+        <div class="row">
+
+             <!-- akuma start-->
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <a class="card-block stretched-link text-decoration-none" href>
+                    <section class="card" id="cardAkuma">
+                        <img class="card-img-top img-fluid" src="images/thumbnails/akuma-thumbnail.png"
+                            alt="akuma-thumbnail">
+                        <div class="card-body">
+                            <h5 class="card-title">Akuma</h5>
+                        </div>
+                    </section>
+                </a>
+            </div>
+
+             <!-- alisa start-->
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <a class="card-block stretched-link text-decoration-none" href>
+                    <section class="card" id="cardAlisa">
+                        <img class="card-img-top img-fluid" src="images/thumbnails/alisa-thumbnail.png"
+                            alt="alisa-thumbnail">
+                        <div class="card-body">
+                            <h5 class="card-title">Alisa</h5>
+                        </div>
+                    </section>
+                </a>
+            </div>
+
+             <!-- asuka start-->
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card" id="cardAsuka">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/asuka-thumbnail.png"
+                        alt="asuka-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Asuka</h5>
+                    </div>
+                </section>
+            </div>
+
+             <!-- bob start-->
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card" id="cardBob">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/bob-thumbnail.png" alt="bob-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Bob</h5>
+                    </div>
+                </section>
+            </div>
+
+             <!-- bryan start-->
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card" id="cardBryan">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/bryan-thumbnail.png"
+                        alt="bryan-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Bryan</h5>
+                    </div>
+                </section>
+            </div>
+            <!-- TEST Cards start-->
+            <div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+              <!-- TEST Cards end-->
+        </div> <!-- row end -->
+
+
+        <script src="script.js"></script>
+        <!-- <script src="cardCreate.js"></script> -->
 </body>
 
 </html>
