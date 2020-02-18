@@ -20,28 +20,54 @@
 
         <p> Quicksearch: </p>
         <div class="row">
-            <div class="col-xs-3">
+            <div class="col-sm-3">
                 <input id="charName" class="form-control" type="text" placeholder="Character" aria-label="Search">
             </div>
             <!-- <input type="text" id="charName" value="c"> </br> -->
-            <div class="col-xs-3">
+            <div class="col-sm-3">
                 <input id="moveName" class="form-control" type="text" placeholder="String" aria-label="Search">
             </div>
             <!-- <input type="text" id="moveName" value="m"> -->
-            <button id="searchBtn" onclick="trySearch()">Search</button>
+            <div class="col-sm-6"> 
+               <button id="searchBtn" onclick="trySearch()">Search</button>
+            </div>
         </div>
 
-        <div id='tekken-app'></div>
-        <!-- Charater Card: Start -->
+        <!-- <div id='tekken-app'></div> -->
+
+        <div class="card-deck">
+            <div class="card" >
+              <img class="card-img-top" src="images/thumbnails/akuma-thumbnail.png" style="width: 9rem" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Akuma</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="images/thumbnails/akuma-thumbnail.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Akuna</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+        </div>
+
+        <!-- <!-- Charater Card: Start 
         <div class="character-card">
             <a href="#" id="button" class="button">
                 <img src='images/thumbnails/akuma-thumbnail.png' class="image">
                 <div class="character-card-name">AKUMA</div>
             </a>
         </div>
-        <!-- Character Card: End -->
+        <!-- Character Card: End 
 
-        <!-- Modal: Start -->
+        <!-- Modal: Start 
         <div class="character-info-window-overlay">
             <div class="character-info-window">
                 <img src='images/background/akuma-background.png' class="image-modal">
@@ -49,12 +75,12 @@
                 <h1>AKUMA</h1>
             </div>
         </div>
-        <!-- Modal: End -->
+        Modal: End -->
     </div>
 
 
     <script src="script.js"></script>
-    <script src="cardCreate.js"></script>
+    <!-- <script src="cardCreate.js"></script> -->
 </body>
 
 </html>
