@@ -3,10 +3,10 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="cardStyle.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title> TEKKEN 7 </title>
@@ -16,71 +16,69 @@
     <div class="container">
         <h1>TEKKEN 7</h1>
         <p> The best fights are personal.</p>
-
-
         <p> Quicksearch: </p>
+
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-xs-3">
                 <input id="charName" class="form-control" type="text" placeholder="Character" aria-label="Search">
             </div>
             <!-- <input type="text" id="charName" value="c"> </br> -->
-            <div class="col-sm-3">
+            <div class="col-xs-3">
                 <input id="moveName" class="form-control" type="text" placeholder="String" aria-label="Search">
             </div>
             <!-- <input type="text" id="moveName" value="m"> -->
-            <div class="col-sm-6"> 
-               <button id="searchBtn" onclick="trySearch()">Search</button>
+            <div class="col-xs-6">
+                <button id="searchBtn" onclick="trySearch()">Search</button>
             </div>
         </div>
 
         <!-- <div id='tekken-app'></div> -->
-
-        <div class="card-deck">
-            <div class="card" >
-              <img class="card-img-top" src="images/thumbnails/akuma-thumbnail.png" style="width: 9rem" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Akuma</h5>
-              </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-6">               
+                 <section class="card">
+                    <img class="card-img-top" src="images/thumbnails/akuma-thumbnail.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Akuma</h5>
+                    </div>
+                </section>
             </div>
-            <div class="card">
-              <img class="card-img-top" src="images/thumbnails/akuma-thumbnail.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Akuna</h5>
-              </div>
+            <div class="col-sm-3 col-xs-6">       
+                <section class="card">
+                    <img class="card-img-top " src="images/thumbnails/alisa-thumbnail.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Alisa</h5>
+                    </div>
+                </section>
             </div>
-            <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
+            <div class="col-sm-3 col-xs-6">       
+                <section class="card">
+                    <img class="card-img-top " src="images/thumbnails/asuka-thumbnail.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Asuka</h5>
+                    </div>
+                </section>
             </div>
-        </div>
-
-        <!-- <!-- Charater Card: Start 
-        <div class="character-card">
-            <a href="#" id="button" class="button">
-                <img src='images/thumbnails/akuma-thumbnail.png' class="image">
-                <div class="character-card-name">AKUMA</div>
-            </a>
-        </div>
-        <!-- Character Card: End 
-
-        <!-- Modal: Start 
-        <div class="character-info-window-overlay">
-            <div class="character-info-window">
-                <img src='images/background/akuma-background.png' class="image-modal">
-                <div class="close">+</div>
-                <h1>AKUMA</h1>
+            <div class="col-sm-3 col-xs-6">       
+                <section class="card">
+                    <img class="card-img-top " src="images/thumbnails/bob-thumbnail.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Bob</h5>
+                    </div>
+                </section>
             </div>
-        </div>
-        Modal: End -->
-    </div>
+            <div class="col-sm-3 col-xs-6">       
+                <section class="card">
+                    <img class="card-img-top " src="images/thumbnails/bryan-thumbnail.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">bryan</h5>
+                    </div>
+                </section>
+            </div>
+        </div> <!-- row end -->
 
 
-    <script src="script.js"></script>
-    <!-- <script src="cardCreate.js"></script> -->
+        <script src="script.js"></script>
+        <!-- <script src="cardCreate.js"></script> -->
 </body>
 
 </html>
