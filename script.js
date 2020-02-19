@@ -133,6 +133,15 @@ async function findFrameTrap(chname, strname) {
             console.log(buildRcmdMoves(searchResultArr, "m"));
             console.log("Here's high frame trap moves: ");
             console.log(buildRcmdMoves(searchResultArr, "h"));
+
+            //*/*//*/*//*/*//*/*//*/*//*/*
+            //Building the table
+            table_JS();
+            build_table(searchResultArr);
+
+
+            //
+            //*/*//*/*//*/*//*/*//*/*//*/*
         }
 
 
