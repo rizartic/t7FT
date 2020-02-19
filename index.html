@@ -15,10 +15,17 @@
 
 <body>
     <div class="container">
+
+        <!-- need a navbar!!!-->
+
+
+        <!-- title -->
         <h1>TEKKEN 7</h1>
         <p> The best fights are personal.</p>
         <p> Quicksearch: </p>
+        <!-- end title-->
 
+        <!-- search-->
         <div class="row">
             <div class="col-xs-3">
                 <input id="charName" class="form-control" type="text" placeholder="Character" aria-label="Search">
@@ -30,11 +37,75 @@
                 <button id="searchBtn" onclick="trySearch()">Search</button>
             </div>
         </div>
+        <!-- end search-->
 
-       
+        <!--  table-->
+        <table class="table table-hover">
+            <thead>
+                <th>Command</th>
+                <th>Hit</th>
+                <th>Speed</th>
+                <th>Damage</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>df2</td>
+                    <td>m, m, h</td>
+                    <td>13</td>
+                    <td>24</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- comment out accordion table, focus on putting data on table first-->
+        <!-- <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Collapsible Group Item #2
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Collapsible Group Item #3
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+        </div>
+        end accordion table -->
         <div class="row">
 
-             <!-- akuma start-->
+            <!-- akuma start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <a class="card-block stretched-link text-decoration-none" href>
                     <section class="card" id="cardAkuma">
@@ -47,7 +118,7 @@
                 </a>
             </div>
 
-             <!-- alisa start-->
+            <!-- alisa start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <a class="card-block stretched-link text-decoration-none" href>
                     <section class="card" id="cardAlisa">
@@ -60,7 +131,7 @@
                 </a>
             </div>
 
-             <!-- asuka start-->
+            <!-- asuka start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <section class="card" id="cardAsuka">
                     <img class="card-img-top img-fluid" src="images/thumbnails/asuka-thumbnail.png"
@@ -71,7 +142,7 @@
                 </section>
             </div>
 
-             <!-- bob start-->
+            <!-- bob start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <section class="card" id="cardBob">
                     <img class="card-img-top img-fluid" src="images/thumbnails/bob-thumbnail.png" alt="bob-thumbnail">
@@ -81,7 +152,7 @@
                 </section>
             </div>
 
-             <!-- bryan start-->
+            <!-- bryan start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <section class="card" id="cardBryan">
                     <img class="card-img-top img-fluid" src="images/thumbnails/bryan-thumbnail.png"
@@ -92,7 +163,8 @@
                 </section>
             </div>
             <!-- TEST Cards start-->
-            <div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
                     <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
                         alt="mokujin-thumbnail">
                     <div class="card-body">
@@ -100,49 +172,8 @@
                     </div>
                 </section>
             </div>
-            <div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
                     <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
                         alt="mokujin-thumbnail">
                     <div class="card-body">
@@ -150,7 +181,61 @@
                     </div>
                 </section>
             </div>
-              <!-- TEST Cards end-->
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <!-- TEST Cards end-->
         </div> <!-- row end -->
 
 
