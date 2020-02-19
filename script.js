@@ -14,6 +14,8 @@ var dict = { //dictionaries
     "heihachi" : "heihachi",
     "lee": "lee",
 }
+
+/////////////////EVENT LISTERNERS
 var input = document.getElementById("moveName");
 input.addEventListener("keyup",
     function (event) {
@@ -24,6 +26,14 @@ input.addEventListener("keyup",
         }
     });
 
+
+// document.addEventListener('click', function(event) {
+//     if (!event.target.matches('.card'))
+//         return;
+//     event.preventDefault();
+//     alert("Woah I just got clicked!");
+// }
+///////////////// END EVENT LISTERNERS
 function trySearch() {
     var chname = document.getElementById("charName").value;
     var strname = document.getElementById("moveName").value;
@@ -94,6 +104,7 @@ async function findFrameTrap(chname, strname) {
         //currently, we're only working with OH.
         // console.log(data);
         var firstMove = searchResult[0];
+        build_searchedMove(firstMove);
         if (isNaN(firstMove.onBlock)) {
             firstMove.onBlock = convertSpeed(firstMove.onBlock);
             firstMove.onBlock = firstMove.onBlock[0]; //just use the lowest possible value of OB
