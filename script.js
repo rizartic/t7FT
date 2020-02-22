@@ -139,25 +139,24 @@ async function findFrameTrap(chname, strname) {
 
         var firstMove = searchResult[0];
         build_searchedMove(firstMove);  //print the searched move to the website
-        if (isNaN(firstMove.onBlock)) {
-            firstMove.onBlock = convertSpeed(firstMove.onBlock);
-            firstMove.onBlock = firstMove.onBlock[0]; //just use the lowest possible value of OB
-        }
+        // if (isNaN(firstMove.onBlock)) {
+        firstMove.onBlock = convertSpeed(firstMove.onBlock);
+        firstMove.onBlock = firstMove.onBlock[0]; //just use the lowest possible value of OB
+        // }
         console.log('-------------------------');
         console.log('Command: ' + firstMove.cmd);
         console.log('OB: ' + firstMove.onBlock);
-        console.log(firstMove.onBlock);
         console.log('-------------------------');
 
         //--------------------------------------------------------------------------------------- should be its own function, so we do OB and OH
         /* Here, the move is not plus enough to generate a frame trap,
-        so we'll check if we can sidestep */
+        so we'll check if we can sidestep
+        If it can't, print the messages in the tables. */
         if (firstMove.onBlock < 1 && firstMove.onBlock > -9) {
-            console.log('No frametrap...');
             if (firstMove.onBlock < -4)
-                console.log('...and side stepping is hard. OB: (' + firstMove.onBlock + ')');
+                build_table('No frametrap...', '...and side stepping is hard.');
             else
-                console.log('...but side stepping is possible. OB: (' + firstMove.onBlock + ')');
+                build_table('No frametrap...', '...but side stepping is possible.');
         }
         //---------------------------------------------------------------------------------------
         /* Here, the move will make a frame trap, so we'll make

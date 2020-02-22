@@ -38,6 +38,17 @@ function build_table(mdarr, hiarr) {
     var mdt = document.getElementById('midFdTable');
     var hdt = document.getElementById('hiFdTable');
 
+    //if the string has no frame traps, print sidestepability
+    if (typeof(mdarr) != "object" && typeof(hiarr) != "object")
+    {
+        var newRow = mdt.insertRow(mdt.rows.length);
+        var cmdcellmid = newRow.insertCell(0);
+        cmdcellmid.innerHTML = mdarr;
+
+        var newRowhi = hdt.insertRow(hdt.rows.length);
+        var cmdcellhi = newRowhi.insertCell(0);
+        cmdcellhi.innerHTML = hiarr;
+    }
     mdarr.forEach(move => {
 
         var newRow = mdt.insertRow(mdt.rows.length);
