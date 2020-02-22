@@ -69,7 +69,7 @@ input.addEventListener("keyup",
 // }
 ///////////////// END EVENT LISTERNERS
 function trySearch() {
-    var chname = document.getElementById("charName").value;
+    var chname = document.getElementById("charName").value.toLowerCase();
     var strname = document.getElementById("moveName").value;
     if (dict[chname]) {
         findFrameTrap(chname, strname);
