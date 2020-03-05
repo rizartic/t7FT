@@ -15,10 +15,17 @@
 
 <body>
     <div class="container">
+
+        <!-- need a navbar!!!-->
+
+
+        <!-- title -->
         <h1>TEKKEN 7</h1>
         <p> The best fights are personal.</p>
         <p> Quicksearch: </p>
+        <!-- end title-->
 
+        <!-- search-->
         <div class="row">
             <div class="col-xs-3">
                 <input id="charName" class="form-control" type="text" placeholder="Character" aria-label="Search">
@@ -30,11 +37,69 @@
                 <button id="searchBtn" onclick="trySearch()">Search</button>
             </div>
         </div>
+        <!-- end search-->
 
-       
+        <h4>Searched Move:</h4>
+        <table class="table table-hover" id="searchedMove">
+            <thead>
+                <th>Command</th>
+                <th>Hit</th>
+                <th>Speed</th>
+                <th>Damage</th>
+                <th>OB</th>
+                <th>OH</th>
+                <th>CH</th>
+            </thead>
+            <tbody>
+                <tr>
+                </tr>
+            </tbody>
+
+
+        </table>
+
+        <h4>Recommended Followups:</h4> <br>
+        <h5>True frame traps (mid strings)</h5>
+        <!--  table-->
+        <table class="table table-hover" id="midFdTable">
+            <thead>
+                <th>Command</th>
+                <th>Hit</th>
+                <th>Speed</th>
+                <th>Damage</th>
+                <th>OB</th>
+                <th>OH</th>
+                <th>CH</th>
+            </thead>
+            
+            <tbody>
+                <tr>
+    
+                </tr>
+            </tbody>
+        </table>
+        <h5>Avoidable frame traps (high strings)</h5>
+        <table class="table table-hover" id="hiFdTable">
+            <thead>
+                <th>Command</th>
+                <th>Hit</th>
+                <th>Speed</th>
+                <th>Damage</th>
+                <th>OB</th>
+                <th>OH</th>
+                <th>CH</th>
+            </thead>
+            
+            <tbody>
+                <tr>
+    
+                </tr>
+            </tbody>
+        </table>
+
         <div class="row">
-
-             <!-- akuma start-->
+        <!-- end table -->
+            <!-- akuma start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <a class="card-block stretched-link text-decoration-none" href>
                     <section class="card" id="cardAkuma">
@@ -47,7 +112,7 @@
                 </a>
             </div>
 
-             <!-- alisa start-->
+            <!-- alisa start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <a class="card-block stretched-link text-decoration-none" href>
                     <section class="card" id="cardAlisa">
@@ -60,7 +125,7 @@
                 </a>
             </div>
 
-             <!-- asuka start-->
+            <!-- asuka start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <section class="card" id="cardAsuka">
                     <img class="card-img-top img-fluid" src="images/thumbnails/asuka-thumbnail.png"
@@ -71,7 +136,7 @@
                 </section>
             </div>
 
-             <!-- bob start-->
+            <!-- bob start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <section class="card" id="cardBob">
                     <img class="card-img-top img-fluid" src="images/thumbnails/bob-thumbnail.png" alt="bob-thumbnail">
@@ -81,7 +146,7 @@
                 </section>
             </div>
 
-             <!-- bryan start-->
+            <!-- bryan start-->
             <div class="col-lg-2 col-sm-4 col-xs-6">
                 <section class="card" id="cardBryan">
                     <img class="card-img-top img-fluid" src="images/thumbnails/bryan-thumbnail.png"
@@ -91,8 +156,19 @@
                     </div>
                 </section>
             </div>
+            
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/claudio-thumbnail.jpg"
+                        alt="claudio-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Claudio</h5>
+                    </div>
+                </section>
+            </div>
             <!-- TEST Cards start-->
-            <div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
                     <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
                         alt="mokujin-thumbnail">
                     <div class="card-body">
@@ -100,49 +176,8 @@
                     </div>
                 </section>
             </div>
-            <div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div><div class="col-lg-2 col-sm-4 col-xs-6">                <section class="card cardTest">
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
                     <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
                         alt="mokujin-thumbnail">
                     <div class="card-body">
@@ -150,11 +185,58 @@
                     </div>
                 </section>
             </div>
-              <!-- TEST Cards end-->
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-xs-6">
+                <section class="card cardTest">
+                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
+                        alt="mokujin-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Mokujin</h5>
+                    </div>
+                </section>
+            </div>
+            <!-- TEST Cards end-->
         </div> <!-- row end -->
 
-
+        <script src="table.js"></script>
         <script src="script.js"></script>
+        
+
         <!-- <script src="cardCreate.js"></script> -->
 </body>
 
