@@ -1,243 +1,35 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="joshcardStyle.css"> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title> TEKKEN 7 </title>
+    <title> TEKKEN 7 TITLE</title>
 </head>
-
 <body>
-    <div class="container">
-
-        <!-- need a navbar!!!-->
-
-
-        <!-- title -->
-        <h1>TEKKEN 7</h1>
-        <p> The best fights are personal.</p>
-        <p> Quicksearch: </p>
-        <!-- end title-->
-
-        <!-- search-->
-        <div class="row">
-            <div class="col-xs-3">
-                <input id="charName" class="form-control" type="text" placeholder="Character" aria-label="Search">
-            </div>
-            <div class="col-xs-3">
-                <input id="moveName" class="form-control" type="text" placeholder="String" aria-label="Search">
-            </div>
-            <div class="col-xs-6">
-                <button id="searchBtn" onclick="trySearch()">Search</button>
-            </div>
+    <div class='wrapper'>
+        <div class='header'>
+            TEKKEN
+            <div class='subheader'>FRAME TRAP TOOL</div>
         </div>
-        <!-- end search-->
-
-        <h4>Searched Move:</h4>
-        <table class="table table-hover" id="searchedMove">
-            <thead>
-                <th>Command</th>
-                <th>Hit</th>
-                <th>Speed</th>
-                <th>Damage</th>
-                <th>OB</th>
-                <th>OH</th>
-                <th>CH</th>
-            </thead>
-            <tbody>
-                <tr>
-                </tr>
-            </tbody>
-
-
-        </table>
-
-        <h4>Recommended Followups:</h4> <br>
-        <h5>True frame traps (mid strings)</h5>
-        <!--  table-->
-        <table class="table table-hover" id="midFdTable">
-            <thead>
-                <th>Command</th>
-                <th>Hit</th>
-                <th>Speed</th>
-                <th>Damage</th>
-                <th>OB</th>
-                <th>OH</th>
-                <th>CH</th>
-            </thead>
-            
-            <tbody>
-                <tr>
-    
-                </tr>
-            </tbody>
-        </table>
-        <h5>Avoidable frame traps (high strings)</h5>
-        <table class="table table-hover" id="hiFdTable">
-            <thead>
-                <th>Command</th>
-                <th>Hit</th>
-                <th>Speed</th>
-                <th>Damage</th>
-                <th>OB</th>
-                <th>OH</th>
-                <th>CH</th>
-            </thead>
-            
-            <tbody>
-                <tr>
-    
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="row">
-        <!-- end table -->
-            <!-- akuma start-->
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <a class="card-block stretched-link text-decoration-none" href>
-                    <section class="card" id="cardAkuma">
-                        <img class="card-img-top img-fluid" src="images/thumbnails/akuma-thumbnail.png"
-                            alt="akuma-thumbnail">
-                        <div class="card-body">
-                            <h5 class="card-title">Akuma</h5>
-                        </div>
-                    </section>
-                </a>
-            </div>
-
-            <!-- alisa start-->
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <a class="card-block stretched-link text-decoration-none" href>
-                    <section class="card" id="cardAlisa">
-                        <img class="card-img-top img-fluid" src="images/thumbnails/alisa-thumbnail.png"
-                            alt="alisa-thumbnail">
-                        <div class="card-body">
-                            <h5 class="card-title">Alisa</h5>
-                        </div>
-                    </section>
-                </a>
-            </div>
-
-            <!-- asuka start-->
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card" id="cardAsuka">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/asuka-thumbnail.png"
-                        alt="asuka-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Asuka</h5>
-                    </div>
-                </section>
-            </div>
-
-            <!-- bob start-->
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card" id="cardBob">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/bob-thumbnail.png" alt="bob-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Bob</h5>
-                    </div>
-                </section>
-            </div>
-
-            <!-- bryan start-->
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card" id="cardBryan">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/bryan-thumbnail.png"
-                        alt="bryan-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Bryan</h5>
-                    </div>
-                </section>
-            </div>
-            
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/claudio-thumbnail.jpg"
-                        alt="claudio-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Claudio</h5>
-                    </div>
-                </section>
-            </div>
-            <!-- TEST Cards start-->
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-2 col-sm-4 col-xs-6">
-                <section class="card cardTest">
-                    <img class="card-img-top img-fluid" src="images/thumbnails/mokujin-thumbnail.jpg"
-                        alt="mokujin-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Mokujin</h5>
-                    </div>
-                </section>
-            </div>
-            <!-- TEST Cards end-->
-        </div> <!-- row end -->
-
-        <script src="table.js"></script>
-        <script src="script.js"></script>
-        
-
+        <div class='character-select'>
+            <section class='card' id='cardAkuma'>
+                <img src="images/thumbnails/akuma-thumbnail.jpg">
+                <img src="images/thumbnails/alisa-thumbnail.jpg">
+                <img src="images/thumbnails/asuka-thumbnail.jpg">
+                <img src="images/thumbnails/bob-thumbnail.jpg">
+                <img src="images/thumbnails/bryan-thumbnail.jpg">
+                <!-- <img src="images/thumbnails/claudio-thumbnail.jpg"> -->
+            </section>
+        </div>
+        <div class='footer'>Footer</div>
+        <div class='sidebar'>Sidebar</div>
+    </div>
+        <!-- <script src="table.js"></script> -->
+        <!-- <script src="script.js"></script> -->
         <!-- <script src="cardCreate.js"></script> -->
 </body>
-
 </html>
