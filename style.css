@@ -21,8 +21,8 @@ html {
         grid-template-rows: 200 repeat(3, 1fr);
         grid-template-areas: 
             'sidebar sidebar header header'
-            'sidebar sidebar character-select character-select'
-            'sidebar sidebar character-select character-select'
+            'sidebar sidebar content content'
+            'sidebar sidebar content content'
             'sidebar sidebar footer footer';
         grid-gap: 1px;
     }
@@ -49,7 +49,7 @@ html {
 }
 
 .character-select {
-    grid-area: character-select;
+    grid-area: content;
     border: solid black;
     justify-items: center;
     text-align: center;
@@ -69,4 +69,9 @@ html {
 
 img {
     max-width: 19%;
+    /* transition: .5s ease;
+    opacity: 0.7;
+    width: 120px;
+    box-shadow: 3px 3px 10px 0px;
+    color: black; */
 }
