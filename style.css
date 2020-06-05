@@ -59,6 +59,7 @@ html {
     width:18%;
     min-width: 85px;
     padding: 5px;
+    cursor: pointer;
 }
 
 .card:hover img {
