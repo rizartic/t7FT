@@ -5,7 +5,7 @@ html {
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 1fr 1fr 1fr;
+    grid-template-rows: 200px 1fr 1fr 200px;
     grid-template-areas: 
         'header header'
         'content content'
@@ -26,6 +26,20 @@ html {
             'sidebar sidebar footer footer';
         grid-gap: 1px;
     }
+
+    .card-name {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    margin-top: -18px;
+    text-align: center;
+    transition: .5s ease;
+    opacity: 0.5;
+    background-color: black;
+}
 }
 
 .header {
@@ -77,12 +91,13 @@ html {
     font-weight: bold;
     font-style: italic;
     font-size: 12px;
+    text-transform: uppercase;
     color: white;
     margin-top: -18px;
     text-align: center;
     transition: .5s ease;
     opacity: 0.5;
-    background-color: brown;
+    background-color: black;
 }
 
 
