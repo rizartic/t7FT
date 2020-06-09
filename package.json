@@ -1,0 +1,20 @@
+{
+  "name": "t7FT",
+  "version": "1.0.0",
+  "description": "Primarily an exercise in learning web dev basics.",
+  "main": "cardCreate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizartic/t7FT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rizartic/t7FT/issues"
+  },
+  "homepage": "https://github.com/rizartic/t7FT#readme"
+}

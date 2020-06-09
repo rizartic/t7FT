@@ -14,6 +14,8 @@ const app = document.getElementById('character-select');
 // const container = document.createElement('div');
 // container.setAttribute('class', 'container');
 
+const sidebar = document.getElementById('sidebar');
+
 // app.appendChild(container);
 
 /*THIS CODE MAKES THE REQUEST*/
@@ -47,8 +49,18 @@ request.onload = function() {
         app.appendChild(card);
         card.appendChild(thumbnail);
         card.appendChild(characterName);
-        console.log(name);
+        // console.log(name);
+
+        //create div to show text for testing
+        const someText = document.createElement('div');
+        someText.textContent = ('text');
+        sidebar.appendChild(someText);
+
+        
     });
+
+
+
 }
 
 //Send Request
