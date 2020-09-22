@@ -7,3 +7,4 @@ Using API made by [fANZYo](https://github.com/fANZYo/T7Companion)
 - BootStrap
 - API, CORS
 
+Currently hosted at: https://rebelsites.unlv.edu/~articulo/
